@@ -5,6 +5,7 @@ import WithCoffeeService from '../hoc/with-coffee-service';
 import {bestLoaded} from '../../actions/';
 import BestSellerItem from '../bestseller-item/bestseller-item';
 import {Container, Row, Col} from 'reactstrap';
+import Spinner from '../spinner';
 
 class BestGoods extends React.Component {
 
@@ -14,9 +15,10 @@ class BestGoods extends React.Component {
             .then(res => this.props.bestLoaded(res))
             .catch(res => console.log('oh no!' + res));
     }
+
     render() { 
 
-        const {error, bestGoods} = this.props;
+        const {error, bestGoods, loading} = this.props;
 
         if (error) {
 
@@ -27,13 +29,16 @@ class BestGoods extends React.Component {
             )
         }
 
-        const content = bestGoods.map(item => {
+        const content = bestGoods.map((item, index) => {
             return <BestSellerItem 
-                key={item.id}
+                key={index}
                 bestItem={item}
             />
         })
 
+        const data = loading ? <Spinner /> : content;
+        console.log(loading);
+ 
         return (
             <section className="best">
                 <Container>
@@ -42,7 +47,7 @@ class BestGoods extends React.Component {
                         <Col lg={{ size: 10, offset: 1}}>
                             <div className="best__wrapper">
                                 {
-                                    content
+                                    data
                                 }
                             </div>
                         </Col>
@@ -55,7 +60,8 @@ class BestGoods extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        bestGoods: state.bestGoods
+        bestGoods: state.bestGoods,
+        loading: state.loading
     }
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import './app-header.sass';
 import logo from '../../logo/Logo.svg';
 import beansLogo from '../../logo/Beans_logo.svg';
+import {Link} from 'react-router-dom';
 
 
 class AppHeader extends React.Component {
@@ -22,7 +23,7 @@ class AppHeader extends React.Component {
                                                     </div>
                                                 </div> : null;
 
-        const title = pageNumber != 1 ?  <h1 className="title-big">Our Coffee</h1> : null;
+        const title = pageNumber !== 1 ?  <h1 className="title-big">Our Coffee</h1> : null;
 
         return (
             <div className={wrapper}>
@@ -32,15 +33,18 @@ class AppHeader extends React.Component {
                             <header>
                                 <ul className="header">
                                     <li className="header__item">
-                                        <a href="#">
+                                        <Link to='/'>
                                             <img src={logo} alt="logo" />
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="header__item">
-                                        <a href="#">Our coffee</a>
+                                        <Link to='/our-coffee'>Our Coffee</Link>
                                     </li>
                                     <li className="header__item">
-                                        <a href="#">For your pleasure</a>
+                                        <Link to='/for-your-pleasure'>For your pleasure</Link>
+                                    </li>
+                                    <li className="header__item">
+                                        <Link to='/contact-us'>Contact us</Link>
                                     </li>
                                 </ul>
                             </header>

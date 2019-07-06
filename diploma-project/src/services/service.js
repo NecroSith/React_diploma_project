@@ -8,4 +8,16 @@ export default class CoffeeService {
             .then(res => res.json())
         return result;
     }
+
+    getShopItems() {
+        const result = fetch(this._apibase + '/coffee')
+            .then(res => res.json())
+        return result;
+    }
+
+    getGoods() {
+        const result = fetch(this._apibase + '/goods')
+            .then(res => res.json())
+        return result;
+    }
 }

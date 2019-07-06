@@ -1,14 +1,15 @@
 import React from 'react';
 import beansLogoBlack from '../../logo/Beans_logo_dark.svg';
 import BestGoods from '../best-goods/best-goods';
+import {Container, Row, Col} from 'reactstrap';
 
 const MainPage = () => {
     return (
         <>
         <section className="about">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-6 offset-lg-3">
+            <Container>
+                <Row>
+                    <Col lg={{ size: 6, offset: 3}}>
                         <div className="title">About Us</div>
                         <img className="beanslogo" src={beansLogoBlack} alt="Beans logo" />
                         <div className="about__text">
@@ -24,9 +25,9 @@ const MainPage = () => {
                             recommend. Did even but nor are most gave hope. Secure active living depend son
                             repair day ladies now.
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </section>
         <BestGoods />
         </>
