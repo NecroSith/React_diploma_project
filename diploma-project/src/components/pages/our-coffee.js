@@ -4,6 +4,7 @@ import './our-cofee.sass';
 import beansLogoBlack from '../../logo/Beans_logo_dark.svg';
 import coffeeGirl from '../../img/coffee_girl.jpg';
 import ShopItemList from '../shop-item-list';
+import ShopFilter from '../shop-filter/';
 
 
 const OurCoffee = () => {
@@ -37,16 +38,7 @@ const OurCoffee = () => {
                         </form>
                     </Col>
                     <Col lg={4}>
-                        <div className="shop__filter">
-                            <div className="shop__filter-label">
-                                Or filter
-                            </div>
-                            <div className="shop__filter-group">
-                                <button className="shop__filter-btn">Brazil</button>
-                                <button className="shop__filter-btn">Kenya</button>
-                                <button className="shop__filter-btn">Columbia</button>
-                            </div>
-                        </div>
+                        <ShopFilter />
                     </Col>
                 </Row>
                 <Row>

@@ -26,9 +26,18 @@ const headerChanged = (pageNumber) => {
     }
 }
 
+const countryChanged = (country, shopItems) => {
+    return {
+        type: 'FILTER_PRESSED',
+        country: country,
+        payload: shopItems
+    }
+}
+
 export {
     bestLoaded,
     shopLoaded,
     goodsLoaded,
-    headerChanged
+    headerChanged,
+    countryChanged
 }

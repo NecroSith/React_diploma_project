@@ -1,8 +1,10 @@
 const initialState = {
     bestGoods: [],
     shopItems: [],
+    filterResults: [],
     goods: [],
     itemId: 0,
+    countryChosen: null,
     loading: true,
     error: false,
     pageNumber: 1
@@ -32,6 +34,15 @@ const reducer = (state = initialState, action) => {
         case 'HEADER_CHANGED':    
             return {
                 ...state,
+                pageNumber: action.payload
+            };
+        case 'FILTER_PRESSED':  
+            const newItems = action.payload;
+            return {
+                ...state,
+                filterResults: newItems.filter(newItem => {
+                    return newItem.country === action.country;
+                }),
                 pageNumber: action.payload
             };
         default:

@@ -18,17 +18,26 @@ class ShopItemList extends React.Component {
     }
 
     render() {
-        const {shopItems, loading} = this.props;
-
-        const items = shopItems.map((item, index) => {
-            return <ShopItem 
-                    key={index}
-                    shopItem={item}
-                    />
-        })
-
-        console.log(loading);
-
+        const {filterResults, shopItems, loading} = this.props;
+        
+        let items = {};
+        if (filterResults.length == 0) {
+            items = shopItems.map((item, index) => {
+                return <ShopItem 
+                        key={index}
+                        shopItem={item}
+                        />
+            })
+        }
+        else {
+            items = filterResults.map((item, index) => {
+                return <ShopItem 
+                        key={index}
+                        shopItem={item}
+                        />
+            })
+        }
+        
         const content = loading ? <Spinner /> : items;
 
         return (
@@ -45,6 +54,7 @@ class ShopItemList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        filterResults: state.filterResults,
         shopItems: state.shopItems,
         loading: state.loading
     }
