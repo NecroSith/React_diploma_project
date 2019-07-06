@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GoodsListItem = ({goods, index}) => {
+const GoodsListItem = ({goods}) => {
     return (
         <div className="shop__item">
             <img src={goods.url} alt={goods.name} />

@@ -19,8 +19,16 @@ const goodsLoaded = (goods) => {
     }
 }
 
+const headerChanged = (pageNumber) => {
+    return {
+        type: 'HEADER_CHANGED',
+        payload: pageNumber
+    }
+}
+
 export {
     bestLoaded,
     shopLoaded,
-    goodsLoaded
+    goodsLoaded,
+    headerChanged
 }

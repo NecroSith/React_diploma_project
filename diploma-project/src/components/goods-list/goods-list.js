@@ -4,7 +4,7 @@ import CoffeeService from '../../services/service';
 import {connect} from 'react-redux';
 import WithCoffeeService from '../hoc/with-coffee-service';
 import {goodsLoaded} from '../../actions';
-import GoodsItem from '../goods-item/';
+import GoodsListItem from '../goods-list-item';
 import Spinner from '../spinner';
 
 class GoodsList extends React.Component {
@@ -21,9 +21,9 @@ class GoodsList extends React.Component {
         const {goods, loading} = this.props;
 
         const items = goods.map((item, index) => {
-            return <GoodsItem 
-                    key={index}
-                    goods={item}
+            return <GoodsListItem 
+                            key={index}
+                            goods={item}
                     />
         })
 
@@ -33,7 +33,7 @@ class GoodsList extends React.Component {
             <Col lg={{size: 10, offset: 1}}>
                 <div className="shop__wrapper">
                     {
-                       content
+                        content
                     }
                 </div>
             </Col>

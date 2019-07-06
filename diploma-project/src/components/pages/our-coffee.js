@@ -42,7 +42,7 @@ const OurCoffee = () => {
                                 Or filter
                             </div>
                             <div className="shop__filter-group">
-                                <button className="shop__filter-btn">br /azil</button>
+                                <button className="shop__filter-btn">Brazil</button>
                                 <button className="shop__filter-btn">Kenya</button>
                                 <button className="shop__filter-btn">Columbia</button>
                             </div>

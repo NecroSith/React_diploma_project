@@ -3,6 +3,8 @@ import './app-header.sass';
 import logo from '../../logo/Logo.svg';
 import beansLogo from '../../logo/Beans_logo.svg';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {headerChanged} from '../../actions/';
 
 
 class AppHeader extends React.Component {
@@ -32,18 +34,18 @@ class AppHeader extends React.Component {
                         <div className="col-lg-6">
                             <header>
                                 <ul className="header">
-                                    <li className="header__item">
+                                    <li className="header__item" onClick={() => this.props.headerChanged(1)}>
                                         <Link to='/'>
                                             <img src={logo} alt="logo" />
                                         </Link>
                                     </li>
-                                    <li className="header__item">
+                                    <li className="header__item" onClick={() => this.props.headerChanged(2)}>
                                         <Link to='/our-coffee'>Our Coffee</Link>
                                     </li>
-                                    <li className="header__item">
+                                    <li className="header__item" onClick={() => this.props.headerChanged(2)}>
                                         <Link to='/for-your-pleasure'>For your pleasure</Link>
                                     </li>
-                                    <li className="header__item">
+                                    <li className="header__item" onClick={() => this.props.headerChanged(3)}>
                                         <Link to='/contact-us'>Contact us</Link>
                                     </li>
                                 </ul>
@@ -58,4 +60,15 @@ class AppHeader extends React.Component {
     }
 }
 
-export default AppHeader;
+const mapStateToProps = (state) => {
+    return {
+        pageNumber: state.pageNumber
+    }
+}
+
+const mapDispatchToProps = {
+    headerChanged
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppHeader);

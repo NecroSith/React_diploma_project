@@ -2,6 +2,7 @@ const initialState = {
     bestGoods: [],
     shopItems: [],
     goods: [],
+    itemId: 0,
     loading: true,
     error: false,
     pageNumber: 1
@@ -27,6 +28,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 goods: action.payload
+            };
+        case 'HEADER_CHANGED':    
+            return {
+                ...state,
+                pageNumber: action.payload
             };
         default:
             return {
