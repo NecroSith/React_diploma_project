@@ -8,7 +8,7 @@ const ShopItem = ({shopItem, index}) => {
                 {shopItem.name}
             </div>
             <div className="shop__item-country">{shopItem.country}</div>
-            <div className="shop__item-price">{shopItem.price}$</div>
+            <div className="shop__item-price">{shopItem.price}</div>
         </div>
     )
 }

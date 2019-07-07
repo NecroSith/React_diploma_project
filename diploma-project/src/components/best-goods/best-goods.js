@@ -7,6 +7,7 @@ import BestSellerItem from '../bestseller-item/bestseller-item';
 import {Container, Row, Col} from 'reactstrap';
 import Spinner from '../spinner';
 
+
 class BestGoods extends React.Component {
 
     componentDidMount() {
@@ -31,9 +32,9 @@ class BestGoods extends React.Component {
 
         const content = bestGoods.map((item, index) => {
             return <BestSellerItem 
-                key={index}
-                bestItem={item}
-            />
+                        key={index}
+                        bestItem={item}
+                    />
         })
 
         const data = loading ? <Spinner /> : content;

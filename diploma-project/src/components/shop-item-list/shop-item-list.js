@@ -3,9 +3,10 @@ import {Col} from 'reactstrap';
 import CoffeeService from '../../services/service';
 import {connect} from 'react-redux';
 import WithCoffeeService from '../hoc/with-coffee-service';
-import {shopLoaded} from '../../actions';
+import {shopLoaded, itemSelected} from '../../actions';
 import ShopItem from '../shop-item/';
 import Spinner from '../spinner';
+import {Link} from 'react-router-dom';
 
 class ShopItemList extends React.Component {
 
@@ -23,10 +24,11 @@ class ShopItemList extends React.Component {
         let items = {};
         if (filterResults.length == 0) {
             items = shopItems.map((item, index) => {
-                return <ShopItem 
-                        key={index}
-                        shopItem={item}
-                        />
+                return <Link key={index} to={`/our-coffee/${index+1}`} onClick={() => this.props.itemSelected(item, index+1)} >
+                        <ShopItem 
+                            shopItem={item}
+                            />
+                    </Link> 
             })
         }
         else {
@@ -61,7 +63,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    shopLoaded
+    shopLoaded,
+    itemSelected
 }
 
 export default WithCoffeeService()(connect(mapStateToProps, mapDispatchToProps)(ShopItemList));

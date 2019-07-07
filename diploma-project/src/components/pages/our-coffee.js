@@ -6,7 +6,6 @@ import coffeeGirl from '../../img/coffee_girl.jpg';
 import ShopItemList from '../shop-item-list';
 import ShopFilter from '../shop-filter/';
 
-
 const OurCoffee = () => {
     return (
         <section className="shop">

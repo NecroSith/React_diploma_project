@@ -20,4 +20,16 @@ export default class CoffeeService {
             .then(res => res.json())
         return result;
     }
+
+    postData = async(data) => {
+        const result = await fetch(this._apiBase + '/contacts', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        return result;
+    }
 }

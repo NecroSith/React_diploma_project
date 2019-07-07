@@ -10,7 +10,7 @@ import {headerChanged} from '../../actions/';
 class AppHeader extends React.Component {
     render() {
 
-        const {pageNumber = 1} = this.props;
+        const {pageNumber} = this.props;
 
         const wrapper = pageNumber == 1 ? 'preview' : 'banner';
         const addContent = pageNumber == 1 ?  <div className="container"> 
@@ -20,12 +20,18 @@ class AppHeader extends React.Component {
                                                             <img className="beanslogo" src={beansLogo} alt="Beans logo" />>
                                                             <div className="preview__subtitle">We makes every day full of energy and taste</div>
                                                             <div className="preview__subtitle">Want to try our beans?</div>
-                                                            <a href="#" className="preview__btn">More</a>
+                                                            <Link to='/our-coffee' onClick={() => this.props.headerChanged(2)} className="preview__btn">More</Link>
                                                         </div>
                                                     </div>
                                                 </div> : null;
 
-        const title = pageNumber !== 1 ?  <h1 className="title-big">Our Coffee</h1> : null;
+        let title = null;
+        if (pageNumber == 2) {
+            title = <h1 className="title-big">Our Coffee</h1>
+        }
+        else if (pageNumber == 3) {
+            title = <h1 className="title-big">Contact Us</h1>
+        }
 
         return (
             <div className={wrapper}>

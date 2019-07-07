@@ -3,7 +3,9 @@ const initialState = {
     shopItems: [],
     filterResults: [],
     goods: [],
+    selectedItem: [],
     itemId: 0,
+    description: '',
     countryChosen: null,
     loading: true,
     error: false,
@@ -44,6 +46,38 @@ const reducer = (state = initialState, action) => {
                     return newItem.country === action.country;
                 }),
                 pageNumber: action.payload
+            };
+        case 'ITEM_SELECTED':  
+            let descShort = '';
+            if (action.payload.description.length > 199) {
+                descShort = action.payload.description.slice(0, 199).trim() + '...';
+            }
+            else {
+                descShort = action.payload.description;
+            }
+            const newSelected = {
+                country: action.payload.country,
+                description: descShort,
+                url: action.payload.url,
+                price: action.payload.price
+            }
+            return {
+                ...state,
+                description: action.payload.description,
+                selectedItem: newSelected,
+                itemId: action.id
+            };
+        case 'EXPAND_DESCRIPTION': 
+            const itemExpanded = {
+                country: action.payload.country,
+                description: state.description,
+                url: action.payload.url,
+                price: action.payload.price
+            }
+            return {
+                ...state,
+                selectedItem: itemExpanded
+                
             };
         default:
             return {

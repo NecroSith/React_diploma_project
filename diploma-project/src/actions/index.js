@@ -34,10 +34,27 @@ const countryChanged = (country, shopItems) => {
     }
 }
 
+const itemSelected = (item, id) => {
+    return {
+        type: 'ITEM_SELECTED',
+        id: id,
+        payload: item
+    }
+}
+
+const expandDescription = (item) => {
+    return {
+        type: 'EXPAND_DESCRIPTION',
+        payload: item
+    }
+}
+
 export {
     bestLoaded,
     shopLoaded,
     goodsLoaded,
     headerChanged,
-    countryChanged
+    countryChanged,
+    itemSelected,
+    expandDescription
 }
