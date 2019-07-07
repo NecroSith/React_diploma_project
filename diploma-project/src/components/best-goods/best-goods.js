@@ -38,7 +38,6 @@ class BestGoods extends React.Component {
         })
 
         const data = loading ? <Spinner /> : content;
-        console.log(loading);
  
         return (
             <section className="best">

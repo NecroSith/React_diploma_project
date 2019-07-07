@@ -8,9 +8,19 @@ import CoffeeService from '../../services/service';
 
 class ContactUs extends React.Component {
 
-    onFormSubmit = (data) => {
-        const result = new CoffeeService();
+    onFormSubmit = (e) => {
+        const data = {
+            name: e.target.querySelector('input[type=name]').value,
+            email: e.target.querySelector('input[type=email]').value,
+            phone: e.target.querySelector('input[type=phone]').value,
+            mesage: e.target.querySelector('input[type=text]').value
+
+        };
+        console.log(data);
+        const result = new CoffeeService()
         result.postData(data)
+            .then(res => res.json())
+            .catch(err => new Error(err));
     }
 
     render() {
@@ -24,7 +34,10 @@ class ContactUs extends React.Component {
                                 <img className="beanslogo" src={beansLogoBlack} alt="Beans logo" />
                                 <Formik 
                                     render={() => (
-                                        <Form className="form" onSubmit={console.log('done')}>
+                                        <Form className="form" onSubmit={(e) => {
+                                            e.preventDefault();
+                                            this.onFormSubmit(e);
+                                        }} >
                                             <div>
                                                 <label htmlFor="name" className="required">Name</label>
                                                 <Field type="name" className="error" name="name" required/>
