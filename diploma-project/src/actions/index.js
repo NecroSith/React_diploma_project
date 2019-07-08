@@ -86,6 +86,14 @@ const formError = () => {
     }
 }
 
+const findItems = (items, value) => {
+    return {
+        type: 'FIND_ITEMS',
+        payload: items,
+        search: value
+    }
+}
+
 export {
     bestLoaded,
     bestError,
@@ -99,5 +107,6 @@ export {
     expandDescription,
     formSent,
     formLoaded,
-    formError
+    formError,
+    findItems
 }

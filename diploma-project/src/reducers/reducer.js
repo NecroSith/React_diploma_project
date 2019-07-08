@@ -100,6 +100,14 @@ const reducer = (state = initialState, action) => {
                 formSent: true
                 
             };
+        case 'FIND_ITEMS': 
+            const searchValue = action.search;
+            console.log(action.payload);
+            const items = action.payload.filter(item => item.name.toLowerCase().includes(searchValue));
+            return {
+                ...state,
+                shopItems: items
+            };
         default:
             return {
                 ...state

@@ -5,6 +5,7 @@ import beansLogoBlack from '../../logo/Beans_logo_dark.svg';
 import coffeeGirl from '../../img/coffee_girl.jpg';
 import ShopItemList from '../shop-item-list';
 import ShopFilter from '../shop-filter/';
+import ShopSearch from '../shop-search/';
 
 const OurCoffee = () => {
     return (
@@ -31,10 +32,7 @@ const OurCoffee = () => {
                 <div className="line"></div>
                 <Row>
                     <Col lg={{size: 4, offset: 2}}>
-                        <form action="#" className="shop__search">
-                            <label className="shop__search-label" htmlFor="filter">Looking for</label>
-                            <input id="filter" type="text" placeholder="start typing here..." className="shop__search-input" />
-                        </form>
+                        <ShopSearch />
                     </Col>
                     <Col lg={4}>
                         <ShopFilter />
