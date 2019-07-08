@@ -9,7 +9,8 @@ const initialState = {
     countryChosen: null,
     loading: true,
     error: false,
-    pageNumber: 1
+    pageNumber: 1,
+    formSent: false
 }
 
 
@@ -32,6 +33,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 goods: action.payload
+            };
+        case 'FORM_LOADED':    
+            return {
+                ...state,
+                loading: false,
             };
         case 'HEADER_CHANGED':    
             return {
@@ -77,6 +83,13 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectedItem: itemExpanded
+                
+            };
+        case 'FORM_SENT': 
+            return {
+                ...state,
+                loading: true,
+                formSent: true
                 
             };
         default:

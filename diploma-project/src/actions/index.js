@@ -49,6 +49,18 @@ const expandDescription = (item) => {
     }
 }
 
+const formLoaded = () => {
+    return {
+        type: 'FORM_LOADED',
+    }
+}
+
+const formSent = () => {
+    return {
+        type: 'FORM_SENT',
+    }
+}
+
 export {
     bestLoaded,
     shopLoaded,
@@ -56,5 +68,7 @@ export {
     headerChanged,
     countryChanged,
     itemSelected,
-    expandDescription
+    expandDescription,
+    formSent,
+    formLoaded
 }
