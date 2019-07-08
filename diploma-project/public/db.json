@@ -85,38 +85,44 @@
   "contacts": [
     {
       "name": "Ян Николаевич Пустынный",
+      "email": "NecroSith@yandex.ru",
+      "phone": "9539310073",
+      "mesage": "sd",
       "id": 1
     },
     {
       "name": "Ян Николаевич Пустынный",
+      "email": "NecroSith@yandex.ru",
+      "phone": "9539310073",
+      "mesage": "фвыфвфы",
       "id": 2
     },
     {
       "name": "Ян Николаевич Пустынный",
       "email": "NecroSith@yandex.ru",
       "phone": "9539310073",
-      "mesage": "dsadasd",
+      "mesage": "sd",
       "id": 3
     },
     {
       "name": "Ян Николаевич Пустынный",
       "email": "NecroSith@yandex.ru",
       "phone": "9539310073",
-      "mesage": "dsdывфвыфв",
+      "mesage": "dasdas",
       "id": 4
     },
     {
-      "name": "Пустынный",
+      "name": "Пустынный Ян Николаевич",
       "email": "NecroSith@yandex.ru",
-      "phone": "9539310073",
-      "mesage": "dsdывфвыфв",
+      "phone": "asd",
+      "mesage": "asd",
       "id": 5
     },
     {
       "name": "Ян Николаевич Пустынный",
       "email": "NecroSith@yandex.ru",
       "phone": "9539310073",
-      "mesage": "dsadasd",
+      "mesage": "sad",
       "id": 6
     },
     {
@@ -125,48 +131,6 @@
       "phone": "9539310073",
       "mesage": "выыв",
       "id": 7
-    },
-    {
-      "name": "Ян Николаевич Пустынный",
-      "email": "NecroSith@yandex.ru",
-      "phone": "9539310073",
-      "mesage": "фвыфвфы",
-      "id": 8
-    },
-    {
-      "name": "Ян Николаевич Пустынный",
-      "email": "NecroSith@yandex.ru",
-      "phone": "9539310073",
-      "mesage": "фвыфвфы",
-      "id": 9
-    },
-    {
-      "name": "Ян Николаевич Пустынный",
-      "email": "NecroSith@yandex.ru",
-      "phone": "9539310073",
-      "mesage": "ыф",
-      "id": 10
-    },
-    {
-      "name": "Ян Николаевич Пустынный",
-      "email": "NecroSith@yandex.ru",
-      "phone": "9539310073",
-      "mesage": "dsadasd",
-      "id": 11
-    },
-    {
-      "name": "Ян Николаевич Пустынный",
-      "email": "NecroSith@yandex.ru",
-      "phone": "9539310073",
-      "mesage": "ыфв",
-      "id": 12
-    },
-    {
-      "name": "Ян Николаевич Пустынный",
-      "email": "NecroSith@yandex.ru",
-      "phone": "9539310073",
-      "mesage": "dsadasd",
-      "id": 13
     }
   ]
 }

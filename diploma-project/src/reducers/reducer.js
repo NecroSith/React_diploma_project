@@ -22,6 +22,14 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 bestGoods: action.payload
             };
+        case 'BEST_ERROR':   
+        case 'SHOP_ERROR':    
+        case 'GOODS_ERROR':    
+        case 'FORM_ERROR': 
+            return {
+                ...state,
+                error: true
+            };
         case 'SHOP_LOADED':    
             return {
                 ...state,

@@ -5,6 +5,12 @@ const bestLoaded = (bestGoods) => {
     }
 }
 
+const bestError = () => {
+    return {
+        type: 'BEST_ERROR',
+    }
+}
+
 const shopLoaded = (shopItems) => {
     return {
         type: 'SHOP_LOADED',
@@ -12,10 +18,22 @@ const shopLoaded = (shopItems) => {
     }
 }
 
+const shopError = () => {
+    return {
+        type: 'SHOP_ERROR',
+    }
+}
+
 const goodsLoaded = (goods) => {
     return {
         type: 'GOODS_LOADED',
         payload: goods
+    }
+}
+
+const goodsError = () => {
+    return {
+        type: 'GOODS_ERROR',
     }
 }
 
@@ -61,14 +79,25 @@ const formSent = () => {
     }
 }
 
+
+const formError = () => {
+    return {
+        type: 'FORM_ERROR',
+    }
+}
+
 export {
     bestLoaded,
+    bestError,
     shopLoaded,
+    shopError,
     goodsLoaded,
+    goodsError,
     headerChanged,
     countryChanged,
     itemSelected,
     expandDescription,
     formSent,
-    formLoaded
+    formLoaded,
+    formError
 }

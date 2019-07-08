@@ -6,14 +6,17 @@ import {connect} from 'react-redux';
 import ContactForm from '../contact-form/';
 import Spinner from '../spinner';
 import thankyouImg from '../../logo/thankyou.svg';
-import {formLoaded} from  '../../actions/';
-
+import {formLoaded, formError} from  '../../actions/';
+import oops from '../../img/oops.png';
 
 class ContactUs extends React.Component {
 
-    
     componentDidMount() {
         this.props.formLoaded();
+    }
+
+    componentDidCatch() {
+        this.props.formError();
     }
 
     render() {
@@ -26,19 +29,19 @@ class ContactUs extends React.Component {
 
             return (
                 <div>
-                    {/* <img src={error502} alt="oh no, server is out there somewhere!" /> */}
+                    <img src={oops} alt="oh no, server is out there somewhere!" />
                 </div>
             )
         } 
 
-        const thankyou = <div className="thankyou">
+        const content = formSent ? <div className="thankyou">
                             <div className="title">Thank you so much!</div> 
                             <div className="title">We will contact you as soon as possible!</div>
                             <img src={thankyouImg} alt="thank you!" />
                             <button className="want-more">
                                 Another?
                             </button>
-                        </div>;
+                        </div> : <ContactForm />;
 
         return (
             <>
@@ -48,8 +51,7 @@ class ContactUs extends React.Component {
                             <Col lg={{ size: 6, offset: 3}} className="centered">
                                 <div className="title">Tell us about your tastes</div>
                                 <img className="beanslogo" src={beansLogoBlack} alt="Beans logo" />
-                                { loading ? <Spinner/> : <ContactForm />}
-                                { formSent ? thankyou : null}
+                                { loading ? <Spinner/> : content}
                             </Col>
                         </Row>
                     </Container>
@@ -67,9 +69,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-
 const mapDispatchToProps = {
-    formLoaded
+    formLoaded,
+    formError
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactUs);

@@ -2,10 +2,11 @@ import React from 'react';
 import CoffeeService from '../../services/service';
 import {connect} from 'react-redux';
 import WithCoffeeService from '../hoc/with-coffee-service';
-import {bestLoaded} from '../../actions/';
+import {bestLoaded, bestError} from '../../actions/';
 import BestSellerItem from '../bestseller-item/bestseller-item';
 import {Container, Row, Col} from 'reactstrap';
 import Spinner from '../spinner';
+import oops from '../../img/oops.png';
 
 
 class BestGoods extends React.Component {
@@ -14,7 +15,11 @@ class BestGoods extends React.Component {
         const service = new CoffeeService()
         service.getBestGoods()
             .then(res => this.props.bestLoaded(res))
-            .catch(res => console.log('oh no!' + res));
+            .catch(res => this.props.bestError());
+    }
+
+    componentDidCatch() {
+        this.props.bestError();
     }
 
     render() { 
@@ -25,7 +30,7 @@ class BestGoods extends React.Component {
 
             return (
                 <div>
-                    {/* <img src={error502} alt="oh no, server is out there somewhere!" /> */}
+                    <img src={oops} alt="oh no, server is out there somewhere!" />
                 </div>
             )
         }
@@ -66,7 +71,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    bestLoaded
+    bestLoaded,
+    bestError
 }
 
 export default WithCoffeeService()(connect(mapStateToProps, mapDispatchToProps)(BestGoods));

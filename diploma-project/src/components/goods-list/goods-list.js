@@ -3,9 +3,10 @@ import {Col} from 'reactstrap';
 import CoffeeService from '../../services/service';
 import {connect} from 'react-redux';
 import WithCoffeeService from '../hoc/with-coffee-service';
-import {goodsLoaded} from '../../actions';
+import {goodsLoaded, goodsError} from '../../actions';
 import GoodsListItem from '../goods-list-item';
 import Spinner from '../spinner';
+import oops from '../../img/oops.png';
 
 class GoodsList extends React.Component {
 
@@ -14,11 +15,15 @@ class GoodsList extends React.Component {
         const coffeeService = new CoffeeService();
         coffeeService.getGoods()
             .then(res => this.props.goodsLoaded(res))
-            .catch(err => console.log('oh no, goods' + err))
+            .catch(err => this.props.goodsError(err))
+    }
+
+    componentDidCatch() {
+        this.props.goodsError();
     }
 
     render() {
-        const {goods, loading} = this.props;
+        const {error, goods, loading} = this.props;
 
         const items = goods.map((item, index) => {
             return <GoodsListItem 
@@ -28,6 +33,15 @@ class GoodsList extends React.Component {
         })
 
         const content = loading ? <Spinner /> : items;
+
+        if (error) {
+
+            return (
+                <div>
+                    <img src={oops} alt="oh no, server is out there somewhere!" />
+                </div>
+            )
+        }
 
         return (
             <Col lg={{size: 10, offset: 1}}>
@@ -44,12 +58,14 @@ class GoodsList extends React.Component {
 const mapStateToProps = (state) => {
     return {
         goods: state.goods,
+        error: state.error,
         loading: state.loading
     }
 }
 
 const mapDispatchToProps = {
-    goodsLoaded
+    goodsLoaded,
+    goodsError
 }
 
 export default WithCoffeeService()(connect(mapStateToProps, mapDispatchToProps)(GoodsList));

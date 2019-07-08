@@ -3,10 +3,11 @@ import {Col} from 'reactstrap';
 import CoffeeService from '../../services/service';
 import {connect} from 'react-redux';
 import WithCoffeeService from '../hoc/with-coffee-service';
-import {shopLoaded, itemSelected} from '../../actions';
+import {shopLoaded, shopError, itemSelected} from '../../actions';
 import ShopItem from '../shop-item/';
 import Spinner from '../spinner';
 import {Link} from 'react-router-dom';
+import oops from '../../img/oops.png';
 
 class ShopItemList extends React.Component {
 
@@ -15,11 +16,15 @@ class ShopItemList extends React.Component {
         const coffeeService = new CoffeeService();
         coffeeService.getShopItems()
             .then(res => this.props.shopLoaded(res))
-            .catch(err => console.log('oh no, coffee' + err))
+            .catch(err => this.props.shopError())
+    }
+
+    componentDidCatch() {
+        this.props.shopError();
     }
 
     render() {
-        const {filterResults, shopItems, loading} = this.props;
+        const {filterResults, shopItems, loading, error} = this.props;
         
         let items = {};
         if (filterResults.length == 0) {
@@ -39,6 +44,15 @@ class ShopItemList extends React.Component {
                         />
             })
         }
+
+        if (error) {
+
+            return (
+                <div>
+                    <img src={oops} alt="oh no, server is out there somewhere!" />
+                </div>
+            )
+        } 
         
         const content = loading ? <Spinner /> : items;
 
@@ -57,6 +71,7 @@ class ShopItemList extends React.Component {
 const mapStateToProps = (state) => {
     return {
         filterResults: state.filterResults,
+        error: state.error,
         shopItems: state.shopItems,
         loading: state.loading
     }
@@ -64,6 +79,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     shopLoaded,
+    shopError,
     itemSelected
 }
 

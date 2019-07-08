@@ -1,63 +1,49 @@
 import React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import CoffeeService from '../../services/service';
+import WithCoffeeService from '../hoc/with-coffee-service';
 import {connect} from 'react-redux';
 
 class ContactForm extends React.Component {
 
     onFormSubmit = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const data = {
             name: e.target.querySelector('input[type=name]').value,
             email: e.target.querySelector('input[type=email]').value,
-            phone: e.target.querySelector('input[type=phone]').value,
+            phone: e.target.querySelector('input[type=phone]').value || '',
             mesage: e.target.querySelector('input[type=text]').value
 
         };
+        const {coffeeService} = this.props;
+        console.log(coffeeService);
         console.log(data);
-        const result = new CoffeeService()
-        result.postData(data)
+        coffeeService.postData(data)
             .then(res => res.json())
             .catch(err => new Error(err));
     }
 
     render() {
         return (
-            <Formik 
-                render={() => (
-                    <Form className="form" onSubmit={(e) => {
-                        e.preventDefault();
-                        return this.onFormSubmit(e);
-                    }} >
-                        <div>
-                            <label htmlFor="name" className="required">Name</label>
-                            <Field type="name" className="error" name="name" required/>
-                            <ErrorMessage name="name">Name is not correct</ErrorMessage>
-                        </div>
-                        <div>
-                            <label htmlFor="email" className="required">E-mail</label>
-                            <Field type="email" name="email" required/>
-                            <ErrorMessage name="email" component="div">  
-                            {/* {errorMessage => <div className="error">{errorMessage}</div>} */}
-                            </ErrorMessage>
-                        </div>
-                        <div>
-                            <label htmlFor="phone">Phone</label>
-                            <Field type="phone" name="phone" />
-                            <ErrorMessage name="email" component="div">  
-                            {/* {errorMessage => <div className="error">{errorMessage}</div>} */}
-                            </ErrorMessage>
-                        </div>
-                        
-                        <label htmlFor="message" className="required">Your message</label>
-                        <Field type="text" className="textarea" name="message" required placeholder="Text us..."/>
-                        {/* <ErrorMessage name="social.twitter" className="error" component="div"/>  
-                        {status && status.msg && <div>{status.msg}</div>} */}
-                        <button type="submit">
-                            Send us
-                        </button>
-                    </Form>
-                )}
-            /> 
+            <form className="form" onSubmit={(e) => this.onFormSubmit(e)}>
+                <div>
+                    <label htmlFor="name" className="required">Name</label>
+                    <input type="name" className="error" name="name" required/>
+                </div>
+                <div>
+                    <label htmlFor="email" className="required">E-mail</label>
+                    <input type="email" name="email" required/>
+                </div>
+                <div>
+                    <label htmlFor="phone">Phone</label>
+                    <input type="phone" name="phone" />
+                </div>
+                
+                <label htmlFor="message" className="required">Your message</label>
+                <input type="text" className="textarea" name="message" required placeholder="Text us..."/>
+                <button type="submit" >
+                    Send us
+                </button>
+            </form>
         )
     }
 }
@@ -69,4 +55,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps)(ContactForm);
+export default WithCoffeeService()(connect(mapStateToProps)(ContactForm));
