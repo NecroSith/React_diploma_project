@@ -1,6 +1,3 @@
-import React from 'react';
-import ErrorBlock from '../components/error';
-
 export default class CoffeeService {
     constructor() {
         this._apibase = 'http://localhost:3001';
@@ -9,7 +6,6 @@ export default class CoffeeService {
     getBestGoods() {
         const result = fetch(this._apibase + '/bestsellers')
             .then(res => res.json())
-            // .catch(() => <ErrorBlock />)
 
         return result;
     }
@@ -17,14 +13,12 @@ export default class CoffeeService {
     getShopItems() {
         const result = fetch(this._apibase + '/coffee')
             .then(res => res.json())
-            // .catch(() => <ErrorBlock />)
         return result;
     }
 
     getGoods() {
         const result = fetch(this._apibase + '/goods')
             .then(res => res.json())
-            // .catch(() => <ErrorBlock />)
         return result;
     }
 
@@ -37,8 +31,6 @@ export default class CoffeeService {
             },
             body: JSON.stringify(data)
         })
-            // .then(res => res.json())
-            // .catch(() => <ErrorBlock />)
         return result;
     }
 }

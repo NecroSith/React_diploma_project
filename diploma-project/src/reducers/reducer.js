@@ -1,4 +1,7 @@
-const initialState = {
+import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
+
+const initialState ={
     bestGoods: [],
     shopItems: [],
     filterResults: [],
@@ -11,6 +14,7 @@ const initialState = {
     error: false,
     pageNumber: 1,
     formSent: false
+    // form: formReducer
 }
 
 

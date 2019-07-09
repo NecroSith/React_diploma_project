@@ -19,6 +19,10 @@ class ContactUs extends React.Component {
         this.props.formError();
     }
 
+    handleSubmit = (values) => {
+        console.log(values);
+    };;
+
     render() {
 
         const {error, loading, formSent} = this.props;
@@ -41,7 +45,7 @@ class ContactUs extends React.Component {
                             <button className="want-more">
                                 Another?
                             </button>
-                        </div> : <ContactForm />;
+                        </div> : <ContactForm onSubmit={this.handleSubmit}/>;
 
         return (
             <>
