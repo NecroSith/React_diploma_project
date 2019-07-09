@@ -19,15 +19,9 @@ class ContactUs extends React.Component {
         this.props.formError();
     }
 
-    handleSubmit = (values) => {
-        console.log(values);
-    };;
-
     render() {
 
         const {error, loading, formSent} = this.props;
-
-        console.log(formSent);
 
         if (error) {
 
@@ -38,14 +32,16 @@ class ContactUs extends React.Component {
             )
         } 
 
+        console.log('Formsent' + formSent);
+
         const content = formSent ? <div className="thankyou">
                             <div className="title">Thank you so much!</div> 
                             <div className="title">We will contact you as soon as possible!</div>
                             <img src={thankyouImg} alt="thank you!" />
-                            <button className="want-more">
-                                Another?
+                            <button className="want-more" onClick={this.props.formLoaded}>
+                                Another? <i class="fas fa-share"></i>
                             </button>
-                        </div> : <ContactForm onSubmit={this.handleSubmit}/>;
+                        </div> : <ContactForm />;
 
         return (
             <>

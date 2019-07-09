@@ -50,6 +50,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
+                formSent: false
             };
         case 'HEADER_CHANGED':    
             return {

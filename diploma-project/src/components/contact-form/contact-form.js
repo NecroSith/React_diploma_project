@@ -29,6 +29,7 @@ class ContactForm extends React.Component {
             const {coffeeService} = this.props;
             coffeeService.postData(data)
                 .then(res => res.json())
+                .then(this.props.formSent)
                 .catch(err => new Error(err));
         }
     }
