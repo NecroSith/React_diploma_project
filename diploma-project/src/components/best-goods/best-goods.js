@@ -29,7 +29,7 @@ class BestGoods extends React.Component {
         if (error) {
 
             return (
-                <div>
+                <div className="error-block">
                     <img src={oops} alt="oh no, server is out there somewhere!" />
                 </div>
             )
@@ -66,6 +66,7 @@ class BestGoods extends React.Component {
 const mapStateToProps = (state) => {
     return {
         bestGoods: state.bestGoods,
+        error: state.error,
         loading: state.loading
     }
 }
