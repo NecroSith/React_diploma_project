@@ -32,8 +32,6 @@ class ContactUs extends React.Component {
             )
         } 
 
-        console.log('Formsent' + formSent);
-
         const content = formSent ? <div className="thankyou">
                             <div className="title">Thank you so much!</div> 
                             <div className="title">We will contact you as soon as possible!</div>

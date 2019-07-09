@@ -12,8 +12,8 @@ class AppHeader extends React.Component {
 
         const {pageNumber} = this.props;
 
-        const wrapper = pageNumber == 1 ? 'preview' : 'banner';
-        const addContent = pageNumber == 1 ?  <div className="container"> 
+        const wrapper = pageNumber === 1 ? 'preview' : 'banner';
+        const addContent = pageNumber === 1 ?  <div className="container"> 
                                                     <div className="row">
                                                         <div className="col-lg-10 offset-lg-1">
                                                             <h1 className="title-big">Everything You Love About Coffee</h1>
@@ -26,10 +26,10 @@ class AppHeader extends React.Component {
                                                 </div> : null;
 
         let title = null;
-        if (pageNumber == 2) {
+        if (pageNumber === 2) {
             title = <h1 className="title-big">Our Coffee</h1>
         }
-        else if (pageNumber == 3) {
+        else if (pageNumber === 3) {
             title = <h1 className="title-big">Contact Us</h1>
         }
 
