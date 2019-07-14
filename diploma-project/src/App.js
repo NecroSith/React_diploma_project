@@ -18,11 +18,11 @@ class App extends React.Component {
         <div className="App">
           <AppHeader />
           <Switch>
-            <Route path="/" exact component={MainPage} />
-            <Route path="/our-coffee" exact component={OurCoffee} />
-            <Route path="/for-your-pleasure" component={Pleasure} />
-            <Route path="/contact-us" component={ContactUs} />
-            <Route path={`/our-coffee/${this.props.itemId}`} exact component={ItemPage} />
+            <Route path="/coffee-app/" exact component={MainPage} />
+            <Route path="/coffee-app/our-coffee" exact component={OurCoffee} />
+            <Route path="/coffee-app/for-your-pleasure" component={Pleasure} />
+            <Route path="/coffee-app/contact-us" component={ContactUs} />
+            <Route path={`/coffee-app/our-coffee/${this.props.itemId}`} exact component={ItemPage} />
           </Switch>
           <AppFooter />
         </div>

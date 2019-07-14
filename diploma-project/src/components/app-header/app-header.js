@@ -20,7 +20,7 @@ class AppHeader extends React.Component {
                                                             <img className="beanslogo" src={beansLogo} alt="Beans logo" />>
                                                             <div className="preview__subtitle">We makes every day full of energy and taste</div>
                                                             <div className="preview__subtitle">Want to try our beans?</div>
-                                                            <Link to='/our-coffee' onClick={() => this.props.headerChanged(2)} className="preview__btn">More</Link>
+                                                            <Link to='/coffee-app/our-coffee' onClick={() => this.props.headerChanged(2)} className="preview__btn">More</Link>
                                                         </div>
                                                     </div>
                                                 </div> : null;
@@ -41,18 +41,18 @@ class AppHeader extends React.Component {
                             <header>
                                 <ul className="header">
                                     <li className="header__item" onClick={() => this.props.headerChanged(1)}>
-                                        <Link to='/'>
+                                        <Link to='/coffee-app/'>
                                             <img src={logo} alt="logo" />
                                         </Link>
                                     </li>
                                     <li className="header__item" onClick={() => this.props.headerChanged(2)}>
-                                        <Link to='/our-coffee'>Our Coffee</Link>
+                                        <Link to='/coffee-app/our-coffee'>Our Coffee</Link>
                                     </li>
                                     <li className="header__item" onClick={() => this.props.headerChanged(2)}>
-                                        <Link to='/for-your-pleasure'>For your pleasure</Link>
+                                        <Link to='/coffee-app/for-your-pleasure'>For your pleasure</Link>
                                     </li>
                                     <li className="header__item" onClick={() => this.props.headerChanged(3)}>
-                                        <Link to='/contact-us'>Contact us</Link>
+                                        <Link to='/coffee-app/contact-us'>Contact us</Link>
                                     </li>
                                 </ul>
                             </header>
