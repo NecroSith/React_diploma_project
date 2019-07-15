@@ -98,7 +98,7 @@ const reducer = (state = initialState, action) => {
         case 'FORM_SENT': 
             return {
                 ...state,
-                loading: true,
+                loading: false,
                 formSent: true
                 
             };

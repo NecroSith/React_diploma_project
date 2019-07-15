@@ -1,5 +1,6 @@
 import React from 'react';
 import WithCoffeeService from '../hoc/with-coffee-service';
+import {formSent} from '../../actions';
 import {connect} from 'react-redux';
 import InputMask from 'react-input-mask';
 
@@ -30,7 +31,16 @@ class ContactForm extends React.Component {
                 .then(res => res.json())
                 .then(this.props.formSent)
                 .catch(err => new Error(err));
+            this.clearForm(e);
         }
+        
+    }
+
+    clearForm = (e) => {
+        e.target.querySelector('input[type=name]').value = '';
+        e.target.querySelector('input[type=email]').value = '';
+        e.target.querySelector('input[type=phone]').value = '';
+        e.target.querySelector('input[type=text]').value = '';
     }
 
 
@@ -68,4 +78,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default WithCoffeeService()(connect(mapStateToProps)(ContactForm));
+const mapDispatchToProps = {
+    formSent
+}
+
+export default WithCoffeeService()(connect(mapStateToProps, mapDispatchToProps)(ContactForm));

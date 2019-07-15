@@ -29,7 +29,6 @@ export default class CoffeeService {
             cache: 'no-cache',
             credentials: 'same-origin',
             headers: {
-              'Accept': 'application/json, text/plain, */*',
               'Content-Type': 'application/json'
             },
             redirect: 'follow',
