@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ItemPage from './components/pages/item-page';
 import ContactUs from'./components/pages/contact-us';
 import {connect} from 'react-redux';
+import Error404 from './components/404';
 
 
 class App extends React.Component {
@@ -23,6 +24,7 @@ class App extends React.Component {
             <Route path="/coffee-app/for-your-pleasure" component={Pleasure} />
             <Route path="/coffee-app/contact-us" component={ContactUs} />
             <Route path={`/coffee-app/our-coffee/${this.props.itemId}`} exact component={ItemPage} />
+            <Route component={Error404} />
           </Switch>
           <AppFooter />
         </div>

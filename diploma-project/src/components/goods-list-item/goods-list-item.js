@@ -7,7 +7,7 @@ const GoodsListItem = ({goods}) => {
             <div className="shop__item-title">
                 {goods.name}
             </div>
-            <div className="shop__item-price">{goods.price}$</div>
+            <div className="shop__item-price">{goods.price}</div>
         </div>
     )
 }

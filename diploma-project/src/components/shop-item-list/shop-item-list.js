@@ -29,7 +29,7 @@ class ShopItemList extends React.Component {
         let items = {};
         if (filterResults.length === 0) {
             items = shopItems.map((item, index) => {
-                return <Link key={index} to={`/our-coffee/${index+1}`} onClick={() => this.props.itemSelected(item, index+1)} >
+                return <Link key={index} to={`./our-coffee/${index+1}`} onClick={() => this.props.itemSelected(item, index+1)} >
                         <ShopItem 
                             shopItem={item}
                             />

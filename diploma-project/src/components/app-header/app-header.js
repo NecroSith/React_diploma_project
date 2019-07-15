@@ -32,6 +32,9 @@ class AppHeader extends React.Component {
         else if (pageNumber === 3) {
             title = <h1 className="title-big">Contact Us</h1>
         }
+        else if (pageNumber === 0) {
+            title = <h1 className="title-big">Not found</h1>
+        }
 
         return (
             <div className={wrapper}>

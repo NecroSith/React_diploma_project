@@ -12,10 +12,10 @@ const OurCoffee = () => {
         <section className="shop">
             <Container>
                 <Row>
-                    <div className="col-lg-4 offset-2">
+                    <Col lg={{size: 4, offset: 2}}>
                         <img className="shop__girl" src={coffeeGirl} alt="girl" />
-                    </div>
-                    <div className="col-lg-4">
+                    </Col>
+                    <Col lg={4}>
                         <div className="title">About our beans</div>
                         <img className="beanslogo" src={beansLogoBlack} alt="Beans logo" />
                         <div className="shop__text">
@@ -27,7 +27,7 @@ const OurCoffee = () => {
                             met spot shy want. Children me laughing we prospect answered followed. At it went<br />
                             is song that held help face.
                         </div>
-                    </div>
+                    </Col>
                 </Row>
                 <div className="line"></div>
                 <Row>

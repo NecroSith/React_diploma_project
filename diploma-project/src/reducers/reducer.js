@@ -9,9 +9,8 @@ const initialState ={
     countryChosen: null,
     loading: true,
     error: false,
-    pageNumber: 1,
+    pageNumber: 0,
     formSent: false
-    // form: formReducer
 }
 
 
@@ -93,7 +92,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectedItem: itemExpanded
-                
             };
         case 'FORM_SENT': 
             return {
