@@ -24,6 +24,7 @@ class ShopFilter extends React.Component {
                     Or filter
                 </div>
                 <div className="shop__filter-group">
+                    <button onClick={() => this.props.countryChanged('' ,shopItems)} className="shop__filter-btn">All</button>
                     {items}
                 </div>
             </div>

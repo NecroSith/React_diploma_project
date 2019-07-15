@@ -31,10 +31,10 @@ const OurCoffee = () => {
                 </Row>
                 <div className="line"></div>
                 <Row>
-                    <Col lg={{size: 4, offset: 2}}>
+                    <Col lg={{size: 3, offset: 2}}>
                         <ShopSearch />
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={5}>
                         <ShopFilter />
                     </Col>
                 </Row>
