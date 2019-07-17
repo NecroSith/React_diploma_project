@@ -3,21 +3,8 @@ export default class CoffeeService {
         this._apibase = 'https://yanpustynnyy.ru/coffee-app/api';
     }
 
-    getBestGoods() {
-        const result = fetch(this._apibase + '/?bestsellers')
-            .then(res => res.json())
-
-        return result;
-    }
-
-    getShopItems() {
-        const result = fetch(this._apibase + '/?coffee')
-            .then(res => res.json())
-        return result;
-    }
-
-    getGoods() {
-        const result = fetch(this._apibase + '/?goods')
+    getItems(url) {
+        const result = fetch(this._apibase + `/?${url}`)
             .then(res => res.json())
         return result;
     }

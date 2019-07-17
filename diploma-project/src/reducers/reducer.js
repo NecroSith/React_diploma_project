@@ -9,10 +9,8 @@ const initialState ={
     countryChosen: null,
     loading: true,
     error: false,
-    pageNumber: 1,
     formSent: false
 }
-
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -47,11 +45,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 formSent: false
-            };
-        case 'HEADER_CHANGED':    
-            return {
-                ...state,
-                pageNumber: action.payload
             };
         case 'FILTER_PRESSED':  
             const newItems = action.payload;

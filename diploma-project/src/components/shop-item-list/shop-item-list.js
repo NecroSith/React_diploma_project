@@ -15,7 +15,7 @@ class ShopItemList extends React.Component {
     componentDidMount() {
 
         const coffeeService = new CoffeeService();
-        coffeeService.getShopItems()
+        coffeeService.getItems('coffee')
             .then(res => this.props.shopLoaded(res))
             .catch(err => this.props.shopError())
     }

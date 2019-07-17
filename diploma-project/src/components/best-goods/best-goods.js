@@ -13,7 +13,7 @@ class BestGoods extends React.Component {
 
     componentDidMount() {
         const service = new CoffeeService()
-        service.getBestGoods()
+        service.getItems('bestsellers')
             .then(res => this.props.bestLoaded(res))
             .catch(res => this.props.bestError());
     }

@@ -11,9 +11,8 @@ import oops from '../../img/oops.png';
 class GoodsList extends React.Component {
 
     componentDidMount() {
-
         const coffeeService = new CoffeeService();
-        coffeeService.getGoods()
+        coffeeService.getItems('goods')
             .then(res => this.props.goodsLoaded(res))
             .catch(err => this.props.goodsError(err))
     }
