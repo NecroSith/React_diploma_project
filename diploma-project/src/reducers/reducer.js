@@ -9,7 +9,7 @@ const initialState ={
     countryChosen: null,
     loading: true,
     error: false,
-    pageNumber: 0,
+    pageNumber: 1,
     formSent: false
 }
 

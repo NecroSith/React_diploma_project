@@ -1,4 +1,6 @@
 import React from 'react';
+import {Container, Row, Col} from 'reactstrap';
+import AppHeader from '../app-header';
 
 const styles = {
     textAlign: 'center',
@@ -8,7 +10,19 @@ const styles = {
 
 const Error404 = () => {
     return (
-        <span style={styles}>Oops, It seems this page doesn't exist.</span>
+        <>
+            <div className="banner">
+                <Container>
+                    <Row>
+                        <Col lg={6}>
+                            <AppHeader />
+                        </Col>
+                    </Row>
+                    <h1 className="title-big">Not found</h1>>
+                </Container>
+            </div>
+            <span style={styles}>Oops, It seems this page doesn't exist.</span>
+        </>
     )
 }
 

@@ -9,6 +9,7 @@ import Spinner from '../spinner';
 import {Link} from 'react-router-dom';
 import oops from '../../img/oops.png';
 
+
 class ShopItemList extends React.Component {
 
     componentDidMount() {

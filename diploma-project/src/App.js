@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.sass';
-import AppHeader from './components/app-header';
+// import AppHeader from './components/app-header';
 import AppFooter from './components/app-footer';
 import MainPage from './components/pages/main-page';
 import OurCoffee from './components/pages/our-coffee';
@@ -10,14 +10,14 @@ import ItemPage from './components/pages/item-page';
 import ContactUs from'./components/pages/contact-us';
 import {connect} from 'react-redux';
 import Error404 from './components/404';
-
+import {headerChanged} from './actions/';
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <AppHeader />
+          {/* <AppHeader /> */}
           <Switch>
             <Route path="/coffee-app/" exact component={MainPage} />
             <Route path="/coffee-app/our-coffee" exact component={OurCoffee} />
@@ -39,4 +39,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = {
+  headerChanged
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

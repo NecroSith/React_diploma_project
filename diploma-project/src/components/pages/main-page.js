@@ -2,10 +2,33 @@ import React from 'react';
 import beansLogoBlack from '../../logo/Beans_logo_dark.svg';
 import BestGoods from '../best-goods/best-goods';
 import {Container, Row, Col} from 'reactstrap';
+import AppHeader from '../app-header';
+import beansLogo from '../../logo/Beans_logo.svg';
+import {Link} from 'react-router-dom';
 
 const MainPage = () => {
     return (
         <>
+        <div className="preview">
+            <Container>
+                <Row>
+                    <Col lg={6}>
+                        <AppHeader />
+                    </Col>
+                </Row>
+                <div className="container"> 
+                    <div className="row">
+                        <div className="col-lg-10 offset-lg-1">
+                            <h1 className="title-big">Everything You Love About Coffee</h1>
+                            <img className="beanslogo" src={beansLogo} alt="Beans logo" />>
+                            <div className="preview__subtitle">We makes every day full of energy and taste</div>
+                            <div className="preview__subtitle">Want to try our beans?</div>
+                            <Link to='/coffee-app/our-coffee' onClick={() => this.props.headerChanged(2)} className="preview__btn">More</Link>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
         <section className="about">
             <Container>
                 <Row>

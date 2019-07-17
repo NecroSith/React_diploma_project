@@ -8,6 +8,7 @@ import Spinner from '../spinner';
 import thankyouImg from '../../logo/thankyou.svg';
 import {formLoaded, formError} from  '../../actions/';
 import oops from '../../img/oops.png';
+import AppHeader from '../app-header';
 
 class ContactUs extends React.Component {
 
@@ -20,7 +21,6 @@ class ContactUs extends React.Component {
     }
 
     render() {
-
         const {error, loading, formSent} = this.props;
 
         if (error) {
@@ -43,6 +43,16 @@ class ContactUs extends React.Component {
 
         return (
             <>
+                <div className="contact">
+                    <Container>
+                        <Row>
+                            <Col lg={6}>
+                                <AppHeader />
+                            </Col>
+                        </Row>
+                        <h1 className="title-big">Contact us</h1>>
+                    </Container>
+                </div>
                 <section className="about">
                     <Container>
                         <Row>

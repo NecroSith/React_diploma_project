@@ -4,10 +4,22 @@ import './our-cofee.sass';
 import beansLogoBlack from '../../logo/Beans_logo_dark.svg';
 import coffeeItem from '../../img/coffee_mug.png';
 import GoodsList from '../goods-list/';
+import AppHeader from '../app-header';
 
 
 const Pleasure = () => {
     return (
+        <>
+        <div className="banner">
+            <Container>
+                <Row>
+                    <Col lg={6}>
+                        <AppHeader />
+                    </Col>
+                </Row>
+                <h1 className="title-big">Our Coffee</h1>>
+            </Container>
+        </div>
         <section className="shop">
             <Container>
                 <Row>
@@ -34,6 +46,7 @@ const Pleasure = () => {
                 </Row>
             </Container>
         </section>
+        </>
     )
 }
 
