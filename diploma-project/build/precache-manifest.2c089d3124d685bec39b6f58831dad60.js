@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "51da6eb53c4e0d1e7a914dbdca9c139f",
+    "revision": "d7a6bf438f9e4bed697d0fba91156761",
     "url": "/coffee-app/index.html"
   },
   {
-    "revision": "e3b84702d8bd82e2c18f",
-    "url": "/coffee-app/static/css/main.63b57514.chunk.css"
+    "revision": "9174654dc3316d8d6037",
+    "url": "/coffee-app/static/css/main.1a65903d.chunk.css"
   },
   {
-    "revision": "4952476a7ad3e12848ac",
-    "url": "/coffee-app/static/js/2.eb385439.chunk.js"
+    "revision": "2d29831d91ac9aac9491",
+    "url": "/coffee-app/static/js/2.9a847f52.chunk.js"
   },
   {
-    "revision": "e3b84702d8bd82e2c18f",
-    "url": "/coffee-app/static/js/main.b967ac2b.chunk.js"
+    "revision": "9174654dc3316d8d6037",
+    "url": "/coffee-app/static/js/main.8338215c.chunk.js"
   },
   {
     "revision": "3fb65510829f48b2d7c6",
@@ -50,6 +50,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7ac8f69ecfc7f7a0e20ab4d9dbe65292",
     "url": "/coffee-app/static/media/coffee_mug.7ac8f69e.png"
+  },
+  {
+    "revision": "c04dbf36fa7a996f654ca7516dc8b4c0",
+    "url": "/coffee-app/static/media/contact_bg.c04dbf36.png"
   },
   {
     "revision": "11edec8e53f3e52cd9bf5bf8027ab136",

@@ -5,18 +5,18 @@ const NavigationBlock = ({wrapperClass, logo}) => {
     return (
         <ul className={wrapperClass}>
             <li className={`${wrapperClass}__item`}>
-                <Link to='/coffee-app/'>
+                <Link to='/'>
                     <img src={logo} alt="logo" />
                 </Link>
             </li>
             <li className={`${wrapperClass}__item`}>
-                <Link to='/coffee-app/our-coffee'>Our Coffee</Link>
+                <Link to='/our-coffee'>Our Coffee</Link>
             </li>
             <li className={`${wrapperClass}__item`}>
-                <Link to='/coffee-app/for-your-pleasure'>For your pleasure</Link>
+                <Link to='/for-your-pleasure'>For your pleasure</Link>
             </li>
             <li className={`${wrapperClass}__item`}>
-                <Link to='/coffee-app/contact-us'>Contact us</Link>
+                <Link to='/contact-us'>Contact us</Link>
             </li>
         </ul>
     )
