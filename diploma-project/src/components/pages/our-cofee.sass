@@ -34,6 +34,11 @@
         display: flex
         align-items: center
         justify-content: space-between
+        &-group
+            @media screen and (max-width: 768px)
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-evenly
         &-label 
             margin-right: 35px
         &-btn 

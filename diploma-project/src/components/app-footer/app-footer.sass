@@ -5,10 +5,16 @@ footer
     align-items: flex-end
     margin-top: 30px
     list-style-type: none
+    @media screen and (max-width: 768px)
+        align-items: center
+        justify-content: space-between
     &__item
         font-size: 12px
         margin-right: 40px
         font-weight: normal
+        text-align: center
+        @media screen and (max-width: 768px)
+            margin-right: 0
         a 
             color: #000 
             &:visited
